@@ -1,6 +1,8 @@
 package problemSolving.LinkedList;
 
 import java.util.Arrays;
+import java.util.List;
+
 class ListNode {
     int val;
     ListNode next;
@@ -28,15 +30,20 @@ public class MainLinkedListJ {
         }*/
 
         ListNode resNode = solveLinkedListProblem(head);
+        System.out.println( "this is my middle node value " + resNode.val);
 
 
     }
 
     public static ListNode solveLinkedListProblem(ListNode head){
+        ListNode slow = head;
+        ListNode fast = head;
+        while(fast.next !=null && fast.next.next !=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
 
-
-
-        return head;
+        return slow;
     }
 
     public static ListNode createLinkedList(int n) {
