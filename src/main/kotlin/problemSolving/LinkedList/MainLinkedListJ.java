@@ -1,35 +1,57 @@
 package problemSolving.LinkedList;
 
 import java.util.Arrays;
+class ListNode {
+    int val;
+    ListNode next;
 
-public class MainLinkedListJ {
-    public static void main(String[]args){
+    ListNode() {}
 
-
-
+    ListNode(int val) {
+        this.val = val;
     }
 
-
-    public static void problemsWithArray(){
-        int[] arr= new int[]{3,5,8,9,8,8,1,2,0,0};
-
-        int index = 3;   // where to insert
-        int value = 19;
-
-// shift elements to the right
-        for (int i = arr.length - 1; i > index; i--) {
-            arr[i] = arr[i - 1];
-        }
-
-// insert new value
-        arr[index] = value;
-
-// print array
-        for (int x : arr) {
-            System.out.print(x + " ");
-        }
-
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
     }
 }
+public class MainLinkedListJ {
+    public static void main(String[] args) {
+        ListNode head = createLinkedList(10);
 
+      /*  // Traverse LinkedList
+        ListNode curr = head;
+        while(curr !=null){
+            System.out.print(curr.val + " --> ");
+            curr = curr.next;
+        }*/
+
+        ListNode resNode = solveLinkedListProblem(head);
+
+
+    }
+
+    public static ListNode solveLinkedListProblem(ListNode head){
+
+
+
+        return head;
+    }
+
+    public static ListNode createLinkedList(int n) {
+
+        if (n <= 0) return null;
+
+        ListNode head = new ListNode(1);
+        ListNode current = head;
+
+        for (int i = 2; i <= n; i++) {
+            current.next = new ListNode(i);
+            current = current.next;
+        }
+
+        return head;
+    }
+}
 
