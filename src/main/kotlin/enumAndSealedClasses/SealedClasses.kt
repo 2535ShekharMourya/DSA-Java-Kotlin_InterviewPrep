@@ -1,6 +1,6 @@
 package enumAndSealedClasses
 
-import enumAndSealedClasses.sealedclasses.Shape
+
 import javax.annotation.processing.Messager
 
 sealed class UiState{
